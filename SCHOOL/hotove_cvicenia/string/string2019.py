@@ -166,10 +166,9 @@ for i in range(6):
 c.mainloop()"""
 #19 -> bolo na ulohu
 #20
-import tkinter
+"""import tkinter
 c = tkinter.Canvas(width=450)
 c.pack()
-
 def stvorce(retazec):
     x, y = 20, 200
     l = retazec.split(" ")
@@ -182,7 +181,63 @@ def stvorce(retazec):
                 break
             c.create_rectangle(x, y, x+int(l[i]), y-int(l[i]), fill=f"{l[int(i)+1]}")
             x+=int(l[i]) + 5
-    
-
 stvorce('40 red 20 blue 60 purple 40 red 30 gold')
+c.mainloop()"""
+#21
+"""import tkinter
+
+def kresli(retazec):
+    x, y = 100, 100
+    for znak in retazec:
+        x1, y1 = x, y
+        if znak == 's':
+            y1 -= 10
+        elif znak == 'v':
+            x1 += 10
+        elif znak == 'j':
+            y1 += 10
+        elif znak == 'z':
+            x1 -= 10
+        else:
+            print('nerozumiem "' + znak + '"')
+            return
+        canvas.create_line(x, y, x1, y1)
+        x, y = x1, y1
+
+canvas = tkinter.Canvas()
+canvas.pack()
+
+kresli('ssvvjjzzjjvvssvvsszzsszzjjzzjjvv')
+canvas.mainloop()"""
+#22
+import tkinter
+
+c = tkinter.Canvas()
+c.pack()
+
+def kresli(retazec):
+    kreslenie = True
+    x, y = 100, 100
+    for znak in retazec:
+        x1, y1 = x, y
+        if znak == "h":
+            kreslenie = False
+        elif znak == "d":
+            kreslenie = True
+        if znak in "0123456789":
+            pocet = int(znak)
+        if znak == "s":
+            y1-=10*pocet
+        elif znak == "v":
+            x1+=10*pocet
+        elif znak == "j":
+            y1+=10*pocet
+        elif znak == "z":
+            x1-=10*pocet
+        if kreslenie:
+            c.create_line(x, y, x1, y1)
+        x, y = x1, y1
+
+kresli('4v4j4z4sh5vd'*5)
 c.mainloop()
+
