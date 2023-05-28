@@ -167,17 +167,22 @@ c.mainloop()"""
 #19 -> bolo na ulohu
 #20
 import tkinter
-c = tkinter.Canvas()
+c = tkinter.Canvas(width=450)
 c.pack()
-
 
 def stvorce(retazec):
     x, y = 20, 200
     l = retazec.split(" ")
     print(l)
-    for i in range(0, len(l)-1, 2):
-        c.create_rectangle(x, y, x+int(l[i]), y-int(l[i]), fill=f"{l[int(i)+1]}")
-        x+=int(l[i]) + 5
-stvorce('40 red 20 blue 60 purple 40 red 30 gold')
+    t = True
+    while t:
+        for i in range(0, len(l)-1, 2):
+            if x+int(l[i])>= 450:
+                t=False
+                break
+            c.create_rectangle(x, y, x+int(l[i]), y-int(l[i]), fill=f"{l[int(i)+1]}")
+            x+=int(l[i]) + 5
+    
 
+stvorce('40 red 20 blue 60 purple 40 red 30 gold')
 c.mainloop()
