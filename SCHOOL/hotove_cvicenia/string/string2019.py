@@ -210,11 +210,9 @@ canvas.pack()
 kresli('ssvvjjzzjjvvssvvsszzsszzjjzzjjvv')
 canvas.mainloop()"""
 #22
-import tkinter
-
+"""import tkinter
 c = tkinter.Canvas()
 c.pack()
-
 def kresli(retazec):
     kreslenie = True
     x, y = 100, 100
@@ -237,7 +235,6 @@ def kresli(retazec):
         if kreslenie:
             c.create_line(x, y, x1, y1)
         x, y = x1, y1
-
 kresli('4v4j4z4sh5vd'*5)
-c.mainloop()
+c.mainloop()"""
 
