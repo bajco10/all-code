@@ -166,7 +166,7 @@ for i in range(6):
 c.mainloop()"""
 #19 -> bolo na ulohu
 #20
-"""import tkinter
+import tkinter
 c = tkinter.Canvas(width=450)
 c.pack()
 def stvorce(retazec):
@@ -182,7 +182,7 @@ def stvorce(retazec):
             c.create_rectangle(x, y, x+int(l[i]), y-int(l[i]), fill=f"{l[int(i)+1]}")
             x+=int(l[i]) + 5
 stvorce('40 red 20 blue 60 purple 40 red 30 gold')
-c.mainloop()"""
+c.mainloop()
 #21
 """import tkinter
 
