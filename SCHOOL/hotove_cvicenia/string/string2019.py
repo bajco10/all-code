@@ -39,7 +39,7 @@ print(stvorec(5, "#"))"""
 #7
 """def vyhod_duplikaty(retazec):
     res = ""
-    # return res
+    #return res
     for i in range(len(retazec)-1):
         if retazec[i] != retazec[i+1]:
             res += retazec[i]
