@@ -9,6 +9,32 @@
 
 print(porovnaj("abc", "def"))"""
 #3-6 su primitivne
+#5
+def rozdel_slova(veta):
+    res = ""
+    for i in range(veta.count(" ")):
+        medz = veta.find(" ")
+        res+=veta[:medz] + "\n"
+        veta = veta[medz+1:]
+    return res + veta
+
+print(rozdel_slova("isiel macek do malaciek"))
+
+def rozdel_slova_cez_medzery(retazec):
+    while " " in retazec:
+        medz = retazec.find(" ")
+        print(retazec[:medz])
+        retazec = retazec[medz+1: ]
+    print(retazec)
+
+rozdel_slova_cez_medzery("siel macek do pice")
+
+def rscm(retazec):
+    slova = retazec.split()
+    return "\n".join(slova)
+
+print(rscm("siel macek do margecan"))
+
 #7
 """def vypis(retazec):
     for i in range(len(retazec)):
