@@ -2,6 +2,8 @@ import tkinter
 import math
 import random
 
+"test"
+
 def rgb_picker():
     return f"#{random.randrange(255**3):06x}"
 c = tkinter.Canvas(width=800, height=500)
