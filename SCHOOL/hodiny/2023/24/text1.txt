@@ -1,0 +1,5 @@
+jedna dva
+dva dva
+dva jedna
+jedna jedna dva
+tri dva jedna
