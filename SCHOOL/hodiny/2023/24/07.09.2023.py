@@ -75,6 +75,60 @@ posledny_riadok("text1.txt")"""
         print(f"priemer = {x/n}")
 priemer("text3.txt")"""
 #6
+"""import tkinter
+c = tkinter.Canvas()
+c.pack()
+
+def vypis_subor(meno_suboru):
+    x, y = 0, 0
+    with open(f"SCHOOL/hodiny/2023/24/{meno_suboru}", encoding="UTF-8") as subor:
+        for riadok in subor:
+            c.create_text(x, y, text=riadok, font="arial 12", anchor="nw")
+            y+=20
+
+vypis_subor("text2.txt")
+c.mainloop()"""
+#7
+"""import tkinter
+c = tkinter.Canvas()
+c.pack()
+def kresli(meno_suboru):
+    with open(f"SCHOOL/hodiny/2023/24/{meno_suboru}", encoding="UTF-8") as subor:
+        body = []
+        for riadok in subor:
+            riadok = riadok.replace("\n", "")
+            print(riadok)
+            body.append(riadok.split(" "))
+        print(body)
+        for i in range(len(body)-1):
+            c.create_line(body[i], body[i+1], width=2)
+kresli("body.txt")
+c.mainloop()"""
+#8
+import tkinter
+c = tkinter.Canvas()
+c.pack()
+def kresli(meno_suboru):
+    with open(f"SCHOOL/hodiny/2023/24/{meno_suboru}", encoding="UTF-8") as subor:
+        body = []
+        for riadok in subor:
+            for i in riadok:
+                if i !=" ":
+                    riadok = riadok.replace("\n", "")
+                    body.append(riadok.split(" "))
+                    break
+                body.append(" ")
+        # print(body)
+        for i in range(len(body)-1):
+            if len(body[i]) !=1 and len(body[i+1]) != 1:
+                print(body[i], body[i+1])
+                c.create_line(body[i], body[i+1])
+                
+kresli("body.txt")
+c.mainloop()
+
+
+
 
 
 
