@@ -1,0 +1,4 @@
+prvy riadok
+druhy riadok
+predposledny
+posledny riadok
