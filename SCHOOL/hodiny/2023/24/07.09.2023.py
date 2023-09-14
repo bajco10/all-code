@@ -218,4 +218,3 @@ pridaj("pridavanie.txt", "posledny riadok")"""
 
 
 
-
