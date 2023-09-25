@@ -130,19 +130,20 @@ c.pack()"""
 kresli("body.txt")
 c.mainloop()"""
 #9
-"""# subor na generaciu farieb
+"""
+# subor na generaciu farieb
 import random, tkinter
 c = tkinter.Canvas()
 c.pack()
 
 far=["blue", "green", "yellow", "red"]
-subor = open("python/SCHOOL/hodiny/2023/24/farby.txt", "w")
+subor = open("/home/tomas/Desktop/all-code/SCHOOL/hodiny/2023/24/farby.txt", "w")
 for i in range(40):
     print(random.choice(far), file=subor)
 subor.close()
 
-def do_riadkov(meno_suboru, sirka):
-    with open(f"python/SCHOOL/hodiny/2023/24/{meno_suboru}", encoding="UTF-8") as subor:
+def do_riadkov(sirka):
+    with open(f"/home/tomas/Desktop/all-code/SCHOOL/hodiny/2023/24/farby.txt", encoding="UTF-8") as subor:
         x, y = 0, 0
         l = subor.readlines()
         n = 0
@@ -158,12 +159,12 @@ def do_riadkov(meno_suboru, sirka):
                 x+=30
                 n+=1
 
-do_riadkov("farby.txt", 6)
-c.mainloop()"""
-            
+do_riadkov(6)
+c.mainloop()
+"""   
 #10
 """def vypis_slova(meno_suboru):
-    with open(f"python/SCHOOL/hodiny/2023/24/{meno_suboru}", encoding="UTF-8") as subor:
+    with open(f"/home/tomas/Desktop/all-code/SCHOOL/hodiny/2023/24/{meno_suboru}", encoding="UTF-8") as subor:
         n = 0
         m = 0
         for riadok in subor:
@@ -205,6 +206,16 @@ def pridaj(meno_suboru, text):
 
 pridaj("pridavanie.txt", "predposledny")
 pridaj("pridavanie.txt", "posledny riadok")"""
+#13-stazena
+# subor = open(f"/home/tomas/Desktop/all-code/SCHOOL/hodiny/2023/24/farby.txt")
+import random
+def pridaj():
+    farby = ["red", "green", "blue"]
+    subor = open(f"/home/tomas/Desktop/all-code/SCHOOL/hodiny/2023/24/farby.txt", "a")
+    for i in range(4):
+        subor.write(random.choice(farby)+"\n")
+    subor.close()
+pridaj()
 #14 - dorobit :)
 """def vyhod_riadok(meno_suboru, index):
     subor = f"python/SCHOOL"""
