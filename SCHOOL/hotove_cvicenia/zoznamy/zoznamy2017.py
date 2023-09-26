@@ -166,7 +166,7 @@ z = [5, 3.14, [1, 2], -4, 'ab']
 krat2(z)
 print(z)"""
 #21
-def zdvoj(zoznam):
+"""def zdvoj(zoznam):
     i = 0
     dlzka = len(zoznam)
     while i < dlzka:
@@ -177,4 +177,20 @@ def zdvoj(zoznam):
         
 tab = [1, "Python", 2, "Java", 3, "C#"]
 zdvoj(tab)
-print(tab)
+print(tab)"""
+#22 - neviem ci mozem pouzit sort() - asi hej, aby sa predstavili mozne argumenty pre sort()
+"""def uprac(zoznam):
+    zoznam.sort(reverse=True)
+f = [0, 1, 2, 0, 0, 2]
+uprac(f)
+print(f)"""
+#23
+"""from random import choice 
+def nahodny_zoznam(n, vyber):
+    l = []
+    for i in range(n+1):
+        l.append(choice(vyber))
+    return l
+print(nahodny_zoznam(8, [7, 'red', None]))
+print(nahodny_zoznam(13, [2, 3]))"""
+        
