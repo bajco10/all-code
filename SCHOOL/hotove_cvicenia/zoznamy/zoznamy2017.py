@@ -126,3 +126,55 @@ zoz = zoz = [37, 'hello', -7, 3.14, 'hello', 2]
 novy = vyhod(zoz, "hello")
 print(novy)
 print(zoz)"""
+#17
+"""def vyhod2(zoznam, hodnota):
+    for i in range(len(zoznam)-2):
+        if zoznam[i] == hodnota:
+            zoznam.pop(i)
+zoz = [37, 'hello', -7, 3.14, 'hello', 2]
+vyhod2(zoz, "hello")
+print(zoz)"""
+#18
+"""def zo_suboru(meno_suboru):
+    subor = open("/home/tomas/Desktop/all-code/SCHOOL/hotove_cvicenia/zoznamy/subor.txt")
+    l = []
+    for riadok in subor:
+        riadok=riadok.strip()
+        if " " in riadok:
+            l.append(riadok.split(" "))
+        else:
+            l.append(riadok)
+    subor.close()
+    return l
+print(zo_suboru("subor.txt"))"""
+#19
+"""def do_suboru(meno_suboru, zoznam):
+    subor=open("/home/tomas/Desktop/all-code/SCHOOL/hotove_cvicenia/zoznamy/subor1.txt", "w")
+    for i in zoznam:
+        print(i, file=subor)
+    subor.close()
+    with open("/home/tomas/Desktop/all-code/SCHOOL/hotove_cvicenia/zoznamy/subor1.txt", "r") as subor:
+        lines = subor.readlines()
+    return [line.strip() for line in lines]
+xy = [[100, 200], 300, 400, [500, 600]]
+print(do_suboru("subor1.txt", xy))"""
+#20
+"""def krat2(zoznam):
+    for i in range(len(zoznam)):
+        zoznam[i] = zoznam[i]*2
+z = [5, 3.14, [1, 2], -4, 'ab']
+krat2(z)
+print(z)"""
+#21
+def zdvoj(zoznam):
+    i = 0
+    dlzka = len(zoznam)
+    while i < dlzka:
+        x = zoznam[i]
+        zoznam.insert(i+1, x)
+        dlzka = len(zoznam)
+        i+=2
+        
+tab = [1, "Python", 2, "Java", 3, "C#"]
+zdvoj(tab)
+print(tab)
