@@ -5,8 +5,7 @@ import time
 def get_time():
     current_time = time.strftime("%H:%M:%S")
     print("Current time is:", current_time)
-
-# Create a Tkinter windowbutton = tk.Button(text="Get Time", command=get_time)
+button = tk.Button(text="Get Time", command=get_time)
 button.pack()
 window = tk.Tk()
 window.title("Time Input")
