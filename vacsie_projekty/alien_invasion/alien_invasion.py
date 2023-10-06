@@ -67,7 +67,7 @@ class AlienInvasion:
         """Respond to keypresses and mouse events."""
         for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    filename = "high_score.txt"
+                    filename = "/home/tomas/Desktop/all-code/vacsie_projekty/alien_invasion/high_score.txt"
                     with open(filename, "w") as file_object:
                         file_object.write(str(self.sb.high_score))
                     sys.exit()
@@ -131,7 +131,7 @@ class AlienInvasion:
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = True
         elif event.key == pygame.K_q:
-            filename = "high_score.txt"
+            filename = "/home/tomas/Desktop/all-code/vacsie_projekty/alien_invasion/high_score.txt"
             with open(filename, "w") as file_object:
                 file_object.write(str(self.sb.high_score))
             sys.exit()
