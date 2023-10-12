@@ -8,7 +8,7 @@ class GameStats:
         # Start game in an inactive state.
         self.game_active = False
         # High score should never be reset.
-        with open("high_score.txt") as file_object:
+        with open("/home/tomas/Desktop/all-code/vacsie_projekty/alien_invasion/high_score.txt") as file_object:
             self.high_score = int(file_object.read())
         
     

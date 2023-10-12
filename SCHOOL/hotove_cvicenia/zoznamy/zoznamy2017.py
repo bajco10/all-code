@@ -126,17 +126,18 @@ zoz = zoz = [37, 'hello', -7, 3.14, 'hello', 2]
 novy = vyhod(zoz, "hello")
 print(novy)
 print(zoz)"""
-#17
-"""def vyhod2(zoznam, hodnota):
-    for i in range(len(zoznam)-2):
-        if zoznam[i] == hodnota:
-            zoznam.pop(i)
-zoz = [37, 'hello', -7, 3.14, 'hello', 2]
-vyhod2(zoz, "hello")
+#17 -> nevyhadzujeme prvky cez for cykly!
+"""def vyhod2(zoz, co):
+    while co in zoz:
+        zoz.remove(co)
+zoz = [37, "hello", "hello", -7, -7, -7, "hello"]
+vyhod2(zoz, -7)
 print(zoz)"""
 #18
 """def zo_suboru(meno_suboru):
-    subor = open("/home/tomas/Desktop/all-code/SCHOOL/hotove_cvicenia/zoznamy/subor.txt")
+    subor = open("/home/tomas/Desktop/all-code/SCHOOL/hotove_cv math problems
+icenia/zoznamy/subor.txt") math problems
+
     l = []
     for riadok in subor:
         riadok=riadok.strip()
