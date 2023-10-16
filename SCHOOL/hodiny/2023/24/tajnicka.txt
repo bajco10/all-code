@@ -1,7 +1,9 @@
-PYTHON
-Tuple
-Keys
-Strip
-Shuffle
-Close
-Input
+STOLICKA
+stol
+september
+koleso
+telka
+vypinac
+marec
+karimatka
+mast
