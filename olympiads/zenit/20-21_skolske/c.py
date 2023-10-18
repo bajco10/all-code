@@ -1,0 +1,1 @@
+x = input();print("ano") if x==x[::-1] else print("nie")#)"ein"(tnirp esle ]1-::[x==x fi )"ona"(tnirp;)(tupni = x

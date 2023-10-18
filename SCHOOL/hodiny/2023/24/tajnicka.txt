@@ -1,7 +1,6 @@
-PYTHON
-Tuple
-Keys
-Strip
-Shuffle
-Close
-Input
+opica
+orgován
+pežot
+zemiak
+Čadca
+anakonda

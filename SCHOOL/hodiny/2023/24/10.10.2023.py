@@ -30,7 +30,7 @@ import tkinter
 c = tkinter.Canvas(width=600, height=600)
 c.pack()
 
-with open("/home/tomas/Desktop/all-code/SCHOOL/hodiny/2023/24/tajnicka.txt", "r") as subor:
+with open(r"C:\Users\tomas\Desktop\code\all-code\SCHOOL\hodiny\2023\24\tajnicka.txt", encoding="utf8") as subor:
     x = subor.readlines()
     vysledok = x[0]
     vysledok = vysledok.strip()
