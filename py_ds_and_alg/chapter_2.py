@@ -27,7 +27,7 @@
         result = Vector(len(self))   # start with vecotr of zeros
         for j in range(len(self)):
             result[j] = self[j] + other[j]
-        return result
+        return result§
     
     def __eq__(self, other):
         """Return True if vector has same coordinates as other."""
@@ -37,7 +37,7 @@
         return not self == other   # rely on existing __eq__ definition
     
     def __str__(self):
-        """Produce string representation of vector."""
+     """Produce string representation of vector."""
         return "<" + str(self._coords)[1:-1] + ">"   # adapt list representation
 
 v = Vector(5)

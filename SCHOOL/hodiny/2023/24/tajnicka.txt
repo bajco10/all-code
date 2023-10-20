@@ -1,6 +1,18 @@
+<<<<<<< HEAD
 opica
 orgován
 pežot
 zemiak
 Čadca
 anakonda
+=======
+STOLICKA
+stol
+september
+koleso
+telka
+vypinac
+marec
+karimatka
+mast
+>>>>>>> ccaad1c5a2f6af36cf099a64f4ea1afb73df5ba9
