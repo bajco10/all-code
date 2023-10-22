@@ -47,17 +47,17 @@ def optimalne_body(N, karticky):
     
     return dp[0][N - 1]
 
-# Načítanie vstupu
+
 N = int(input())
 karticky = list(map(int, input().split()))
 
-# Výpočet optimálnych bodov
+
 body = optimalne_body(N, karticky)
 
-# Rozdelenie bodov pre hráča 1 a hráča 2
+
 body_hrac1 = (sum(karticky) + body) // 2
 body_hrac2 = (sum(karticky) - body) // 2
 
-# Výstup
+
 print(body_hrac1, body_hrac2)
 
