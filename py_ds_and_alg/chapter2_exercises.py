@@ -1010,13 +1010,21 @@ class BarChart():
                 line = line.strip()
                 line = line.lower()
                 self.text+=str(line)
+    def _chart_maker(self, letter, count):
+        # making the count display thousands of occurances (one # -> 1K)
+        print(f"{letter}: {'#'*(count//100)}")
     def _counter(self):
         # self.count = self.text.count()
         for i in range(len(self.ALPHABET)):
-            pass
-    def _chart_maker(self, letter, count):
-        # making the count display thousands of occurances (one # -> 1K)
-        print()
+            self._chart_maker(self.ALPHABET[i], self.text.count(self.ALPHABET[i]))
+    
+
+p = BarChart("alice_in_wonderland.txt")
+p._reader()
+p._counter()
+'''f = BarChart("five_orange_pips.txt")
+f._reader()
+f._counter()'''
         
     
         
