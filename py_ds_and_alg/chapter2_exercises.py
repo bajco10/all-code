@@ -1019,14 +1019,413 @@ class BarChart():
             self._chart_maker(self.ALPHABET[i], self.text.count(self.ALPHABET[i]))
     
 
-p = BarChart("alice_in_wonderland.txt")
+"""p = BarChart("alice_in_wonderland.txt")
 p._reader()
-p._counter()
-'''f = BarChart("five_orange_pips.txt")
-f._reader()
-f._counter()'''
+p._counter()"""
+
         
     
-        
-            
+#P-2.35 - not my creation -> understood -> explanation of each line by me
+"""import random # importing to have random chance of acting of alice occuring
 
+class Alice(): # create Alice class
+    CHANCE_OF_ACTING = 0.3 # class variable, used to generate whether a packet will be sent
+    def __init__(self):
+        self._current_packet = None # creating an empty packet
+    
+    def act(self): # method that will decide whether a packet shall be made
+        if random.random() <= self.CHANCE_OF_ACTING: # generating a number and checking whether a packet will be made
+            self._current_packet = self._create_packet() # if True -> calling another method to create a packet and setting it as the current one
+            return True
+        else:
+            return False # the condition for packet creation wasn't met
+    
+    def _create_packet(self): # method that creates the actual packet
+        length = random.randint(5, 20) # deciding the length of the packet
+        packet = [" "]*length # creating an empty list to prepare for packet creation
+        for i in range(length): # "filling in" each index of the packet 
+            packet[i] = chr(random.randint(ord("A"), ord("Z"))) # picking a random character between ordinal values...
+        return "".join(packet) # returning the packet as a string
+    
+    def get_packet(self): # method that allows other methods to call for the packet
+        return self._current_packet # returning the packet to the caller
+    
+    def delete_packet(self): # packet should be deleted when seen
+        self._current_packet = None # deletion of packet -> empty again (None)
+    
+class Internet(): # create Internet calss
+    def __init__(self):
+        self._new_packet = False # variable that determines whether a packet has been sent
+        self._Alice = None # ???
+    
+    def check_for_packet(self): # method that checks for the packet on the "Internet"
+        if self._Alice.get_packet() is not None: # if the packet is not None (it exists and was created in the Alice class)
+            return True # return True cause we have a pcket that need processing (reading by Bob)
+        else:
+            return False# no packet there
+    
+    def read_packet(self): # method that calls an Alice method to read the packet
+        if self._new_packet: # if a new packet is there on the "Internet"
+            return self._Alice.get_packet() # return the return of the Alice method get_packet()
+        else:
+            return None # no packet
+    
+    def delete_packet(self):
+        self._Alice.delete_packet() # calls Alice class method that deletes current packet (after seeing)
+    
+    def assign_Alice(self, alice):
+        self._Alice = alice # because of this we can call for Alic method in this class without inheritence???
+
+class Bob(): # creation of Bob class
+    def check_for_packet(self, other): # method that checks whether there is a packet
+        if other.check_for_packet():
+            return True
+        else:
+            return False
+    
+    def delete_packet(self, other): # deletes the packet
+        other.delete_packet()
+
+Alice = Alice() # instance of alice class
+Inter = Internet() # instance of internet calss
+Inter.assign_Alice(Alice) # assigns alice to the alice xdd, makes the calling I mentioned before possible
+Bob = Bob() # instance of bob class
+
+for i in range(50):
+    print(f"Time is {i}") # prints the "time", allows us to see that the randomness of the code is working
+    if Alice.act(): print("Created the packet", Alice.get_packet()) # if alice decides to create a pocket print ... and the packet she made
+    if Bob.check_for_packet(Inter): # if bob receives the packet
+        print("Bob detected the packet") # prints this fact
+        Bob.delete_packet(Inter) # deletes the packet to be ready for another one"""
+
+
+#P-2.36   
+#notes
+# bear & fish
+# river -> large list (random length?)
+# each element None or bear or fish (objects of those classes) 
+# ---> will assign at random
+# time steps -> for loop?
+# in each step: animal decides to move
+# if 2 animals of same type collide -> create a new instance of that animal
+# this instance is placed at random (Previously None index)
+# if bear and fish collide -> fish dies
+
+# need a fish and bear class
+# also river class -> generates the list and updates via the logic
+# fish and bear classes will bear the killing or not killing etc.
+# create instance of river etc.
+# create a for loop that simulates and prints stuff
+
+
+#-------------------P2-36---------------------
+"""import random
+
+
+
+#These should be nested in theory and then accessed using self.Bear, or self.Fish
+
+
+
+class RiverEcosystem():
+    
+    class Bear():
+        def __init__(self, location):
+            self._location = location
+
+    class Fish():
+        def __init__(self, location):
+            self._location = location
+    
+
+    MOVE_CHANCE = 0.3
+    LR_CHANCE = 0.5
+    
+    def __init__(self, length = 100, bears = 3, fish = 10):
+        self._ecosystem = [None]*length
+        
+        self._bears = self.assign_object(self.Bear, bears)
+        self._fish = self.assign_object(self.Fish, fish)
+        
+        self._time = 0
+        
+        
+    def __len__(self):
+        return (len(self._ecosystem))
+    
+    def __getitem__(self, index):
+        return self._ecosystem[index]
+    
+    def __setitem__(self, index, value):
+        self._ecosystem[index] = value
+    
+    def assign_object(self, obj, number):
+        assigned = 0
+        object_list = []
+        maximum_attempts = 100
+        attempts = 0
+        while assigned <number and attempts < maximum_attempts:
+            attempts +=1
+            i = random.randint(0, len(self)-1)
+            if self[i] is None:
+                new_obj = obj(i)
+                assigned += 1
+                self[i] = new_obj
+                object_list.append(new_obj)
+        return object_list
+
+        
+    def __repr__(self):
+        output_string = []
+        for element in self._ecosystem:
+            if element is None:
+                output_string += '-'
+            elif isinstance(element, self.Bear):
+                output_string += 'B'
+            elif isinstance(element, self.Fish):
+                output_string += 'F'
+            else:
+                output_string += '?'
+                
+        return ''.join(output_string)
+    
+    
+    def _delete_object(self, obj, obj_list):
+        #Challenge is to also delete it from the list of bears/fish
+        target = None
+        
+        for i in range(len(obj_list)):
+            if obj is obj_list[i]:
+                target = i
+        if target is not None: del (obj_list[target])
+                
+    
+    def _attempt_move(self, obj, target_location):
+        if target_location <0 or target_location >=len(self):
+            #print ('Move is out of bounds')
+            return False
+        elif self[target_location] is None:
+            self[obj._location], self[target_location] = self[target_location], self[obj._location]
+        elif type(obj) == type(self[target_location]):
+            #if they are the same type, create one new instance of that object
+            self.assign_object(type(obj), 1)
+        #if not the same, check who is the fish...
+        elif isinstance(obj, self.Fish):
+            self._delete_object(obj, self._fish)
+        elif isinstance(self[target_location], self.Fish):
+            self._delete_object(self[target_location], self._fish)
+        
+    
+    
+    
+    def determine_action(self, obj):
+        if random.random() < self.MOVE_CHANCE:
+            if random.random() <self.LR_CHANCE:
+                self._attempt_move(obj, obj._location -1)
+            
+            else:
+                self._attempt_move(obj, obj._location +1)
+            
+                
+        
+    
+    def timestep(self):
+        self._time += 1
+        for f in self._fish:
+            self.determine_action(f)
+        for b in self._bears:
+            self.determine_action(b)
+
+    
+    
+    
+
+Game1 = RiverEcosystem(100)
+print('Currently playing a game with 3 bears and 10 fish')
+for _ in range(40):
+    print (Game1)
+    Game1.timestep()
+print('\n\n')
+    
+Game2 = RiverEcosystem (100, 10, 10)
+print ('Currently playing a game with 10 bears and 10 fish')
+for _ in range(40):
+    print (Game2)
+    Game2.timestep()"""
+    
+# P-2.38 -> can be considered done
+"""
+class EbookReader():
+    def __init__(self):
+        self.books_in_store = ["alice_in_wonderland.txt", "five_orange_pips.txt", 
+                               "romeo_and_juliet.txt", "visit_to_the_roman_catacombs.txt"]
+        self.my_books = []
+    
+    def buyable_books(self):
+        print("Books you can buy:")
+        print("\n".join(self.books_in_store))
+    
+    def owned_books(self):
+        if not self.my_books:
+            print("You currently have no books to read, visit the store to buy some.")
+        else:
+            print("Books you own:")
+            print("\n".join(self.my_books))
+    
+    def buy_book(self, book_name):
+        if book_name not in self.my_books and book_name in self.books_in_store:
+            self.my_books.append(book_name)
+            self.books_in_store.remove(book_name)
+            print(f"You've just purchased {book_name}; happy reading!")
+        elif book_name in self.my_books:
+            print("You already own the book you are trying to purchase")
+        elif book_name not in self.books_in_store:
+            print("The book you are looking to purchase is currently not in store")
+        
+    
+    def read_book(self, book_name):
+        if book_name in self.my_books:
+            with open(fr"/home/tomas/Desktop/all-code/py_ds_and_alg/{book_name}") as file:
+                bk = ""
+                for line in file:
+                    bk += line
+                print(bk)
+        else:
+            print("you are trying to read a book you don't own or a book we don't offer")
+    
+
+t = EbookReader()
+t.buyable_books()
+t.owned_books()
+t.buy_book("alice_in_wonderland.txt")
+t.owned_books()
+t.buy_book("alice_in_wonderland.txt")
+# t.read_book("alice_in_wonderland.txt")
+"""
+
+#P-2.39 - UNFINISHED, a bit of waste of time, the general concepts are clear, sub-class approach is 
+# impractical?; might remake in the future
+# would just make classes for all asked-for polygons; each requiring rather different variables
+# to be inputted because of the formulas; cannot really think of a way of asking/forcing the user
+# to input the data needed to calculate his desired polygon based on its name or something
+# this can be seen in the Polygon("square", 5) instantiation...
+# might be possible without classes??
+
+from abc import ABC, abstractmethod
+from math import sqrt
+
+class Polygon(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+    def perimeter(self):
+        pass
+
+class Triangle(Polygon):
+    def __init__(self, a, b, c, ha):
+        self.a = a
+        self.b = b
+        self.c = c
+        self.ha = ha
+    
+    def area(self):
+        print((self.a*self.ha)/2)
+    
+    def perimeter(self):
+        print(self.a+self.b+self.c)
+
+"""class Square(Polygon): # remake into polygon! use another class square that inherits
+                        # depending on ha==b
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+    
+    def area(self):
+        print(self.a*self.b)
+    
+    def perimeter(self):
+        print((self.a+self.b)*2)"""
+
+class Quadrilateral(Polygon):
+    def __init__(self, type, a):
+        self.type = type
+        self.obj = None
+
+        if self.type == "square":
+            self.obj = self.Square(a)
+
+    def area(self):
+        if self.obj is not None:
+            return self.obj.area()
+
+    def perimeter(self):
+        if self.obj is not None:
+            return self.obj.perimeter()
+
+    class Square(Polygon):
+        def __init__(self, a):
+            self.a = a
+
+        def area(self):
+            return self.a * self.a
+
+        def perimeter(self):
+            return 4 * self.a
+
+m = Quadrilateral("square", 5)
+print(m.area())  # Output: 25
+print(m.perimeter())  # Output: 20
+
+class Pentagon(Polygon):
+    def __init__(self, a, apothem): # apothem -> height of on of the five "mini" triangles
+        self.a = a
+        self.apothem = apothem
+    
+    def area(self):
+        print(1/2*self.a*self.apothem)
+
+    def perimeter(self):
+        print(5*self.a)
+
+class Hexagon(Polygon):
+    def __init__(self, a, apothem):
+        self.a = a
+        self.apothem = apothem
+        
+    def area(self):
+        print(1/2*(6*self.a)*self.apothem)
+
+    def perimeter(self):
+        print(6*self.a)
+
+class Octagon(Polygon):
+    def __init__(self, a, apothem):
+        self.a = a
+        self.apothem = apothem
+    
+    def area(self):
+        # print((2*(self.a**2))*(1 + sqrt(2)))
+        print(1/2*(8*self.a)*self.apothem)
+
+    def perimeter(self):
+        print(8*self.a)
+
+"""t = Triangle(5, 6, 8, 4)
+t.area()
+t.perimeter()
+
+s = Square(2, 4)
+s.area()
+s.perimeter()
+
+p = Pentagon(4, 3)
+p.area()
+s.perimeter()
+
+h = Hexagon(12, 7)
+h.area()
+h.perimeter()
+
+o = Octagon(16, 12)
+o.area()
+o.perimeter()"""
