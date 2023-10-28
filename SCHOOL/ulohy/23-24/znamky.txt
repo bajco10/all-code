@@ -1,0 +1,17 @@
+Matematika Fyzika Informatika Geografia Dejepis Biológia Chémia
+Babic Boris 1 2 4 1 1 2 2
+Bajana Tomáš 1 1 1 2 4 1 2
+Bielik Adam 1 1 4 2 2 1 2
+Bírová Andrea 1 2 3 x 1 1 1
+Bučo Sebastian 1 2 2 3 2 1 2
+Burdiliak Filip 2 x 1 1 1 2 2
+Černáková Stela 2 1 1 2 4 2 2
+Humeník Kristián 2 4 1 2 2 1 2
+Kovácsová Petra 1 2 3 1 x 1 1
+Lamlech Tomáš 2 2 3 x 2 1 1
+Ondrušíková Kristína 1 4 2 x 2 1 2
+Papšo Filip 2 3 2 1 x 1 1
+Pastierik Juraj 1 x 2 2 1 1 2
+Pecha Michal 2 1 2 4 2 1 2
+Rošťák Magdalena 1 2 1 3 1 2 1
+Vráblová Karolína 2 1 1 2 x 2 2
