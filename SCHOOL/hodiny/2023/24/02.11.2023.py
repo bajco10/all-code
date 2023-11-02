@@ -203,7 +203,7 @@ def vyrob(pr, ps, hodnoty):
 # print(vyrob(3, 3, list(range(1, 20, 2))))
 
 # 16
-import tkinter
+'''import tkinter
 c = tkinter.Canvas()
 c.pack()
 def kruhy(meno_suboru):
@@ -222,5 +222,49 @@ def kruhy(meno_suboru):
         x=40
 
 kruhy("kruhy.txt")
-c.mainloop()
+c.mainloop()'''
 
+#17
+
+import tkinter
+c = tkinter.Canvas()
+c.pack()
+def kruhy(meno_suboru):
+    kruhy_m = []
+    with open(fr"C:\Users\tomas\Desktop\code\all-code\SCHOOL\hodiny\2023\24\{meno_suboru}") as subor:
+        for riadok in subor:
+            riadok = riadok.strip()
+            kruhy_m.append(riadok.split(" "))
+    # print(kruhy_m)
+    x, y = 40, 40
+    for i in kruhy_m:
+        for j in i:
+            if j!="None":
+                c.create_oval(x, y, x+40, y+40, fill=j)
+            x+=40
+        y+=40
+        x=40
+
+# kruhy("kruhy2.txt")
+# c.mainloop
+
+#18
+
+def precitaj(meno_suboru):
+    with open(fr"C:\Users\tomas\Desktop\code\all-code\SCHOOL\hodiny\2023\24\{meno_suboru}") as subor:
+        l = []
+        for riadok in subor:
+            riadok = riadok.strip()
+            l.append(riadok)
+        pr, ps = map(int, l[0].split(" "))
+        m = []
+        for i in range(pr):
+            m.append([0]*ps)
+        l.pop(0)
+        for i in l:
+            # m[int(i[0])][int(i[1])] = int(i[2])
+            y, x, val = map(int, i.split(" "))
+            m[y][x] = val
+        print(m)
+
+# precitaj("matice_uloha18.txt")
