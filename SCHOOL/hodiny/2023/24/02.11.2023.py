@@ -112,15 +112,115 @@ def zisti(tab1, tab2):
         return True
     return False
 
-print(zisti(a, b))
-print(zisti(a, b2))
-print(zisti(a, b3))
+# print(zisti(a, b))
+# print(zisti(a, b2))
+# print(zisti(a, b3))
 
 # 10
-# dorobit!
-"""def sucet(tab1, tab2):
+def sucet(tab1, tab2):
     vys = []
     for i in range(len(tab1)):
         pom = []
-        for j in range(len())"""
+        for j in range(len(tab1[i])):
+            pom.append(tab1[i][j]+tab2[i][j])
+        vys.append(pom)
+    return vys
+
+a = [[5, 6], [1, 2, 3], [4]]
+b = [[-1, -3], [-2, 0, 1], [2]]
+# print(sucet(a, b))
+
+# 11
+
+def citaj(meno_suboru):
+    m = []
+    with open(fr"/home/tomas/Desktop/all-code/SCHOOL/hodiny/2023/24/{meno_suboru}") as subor:
+        for line in subor:
+            line = line.strip()
+            m.append(line.split(" "))
+    citac(m)
+
+def citac(mat):
+    for i in mat:
+        print(" ".join(i))
+
+# (citaj("matice_uloha11.txt"))
+
+# 12
+
+def zapis(m, meno_suboru):
+    with open(fr"/home/tomas/Desktop/all-code/SCHOOL/hodiny/2023/24/{meno_suboru}", "w") as subor:
+        for i in m:
+            riad = ""
+            for j in i:
+                riad += str(j) + " "
+            print(riad, file=subor)
+
+# s = [['anicka', 'dusicka'], ['kde', 'si', 'bola'], ['ked', 'si', 'si', 'cizmicky'], ['zarosila']]
+# zapis(s, "anicka_text.txt")
+# zapis([[1, 11, 21], [345], [-5, 10]], 'cisla.txt')
+# 13
+
+def citaj_cisla(meno_suboru):
+    m = []
+    with open(fr"/home/tomas/Desktop/all-code/SCHOOL/hodiny/2023/24/{meno_suboru}") as subor:
+        for riadok in subor:
+            riadok = riadok.strip()
+            vys = riadok.split(" ")
+            vys = [int(s) for s in vys]
+            m.append(vys)
+    return m
+
+# print(citaj_cisla("cisla.txt"))
+
+# 14
+
+def prvky(tab):
+    vys = []
+    for i in tab:
+        for j in i:
+            vys.append(j)
+    return vys
+
+a = [[5, 6], [1, 2, 3], [4]]
+# b = prvky(a)
+# print(b)
+
+# 15
+def vyrob(pr, ps, hodnoty):
+    m = []
+    for i in range(pr):
+        m.append([])
+    idx = 0
+    for i in range(len(m)):
+        for _ in range(ps):
+            if idx+1>len(hodnoty):
+                idx = 0
+            m[i].append(hodnoty[idx])
+            idx +=1
+    return m
+# print(vyrob(3, 2, [3, 5, 7]))
+# print(vyrob(3, 3, list(range(1, 20, 2))))
+
+# 16
+import tkinter
+c = tkinter.Canvas()
+c.pack()
+def kruhy(meno_suboru):
+    kruhy_m = []
+    with open(fr"/home/tomas/Desktop/all-code/SCHOOL/hodiny/2023/24/{meno_suboru}") as subor:
+        for riadok in subor:
+            riadok = riadok.strip()
+            kruhy_m.append(riadok.split(" "))
+    # print(kruhy_m)
+    x, y = 40, 40
+    for i in kruhy_m:
+        for j in i:
+            c.create_oval(x, y, x+40, y+40, fill=j)
+            x+=40
+        y+=40
+        x=40
+
+kruhy("kruhy.txt")
+c.mainloop()
 
