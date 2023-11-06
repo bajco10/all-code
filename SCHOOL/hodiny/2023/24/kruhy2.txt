@@ -1,0 +1,5 @@
+yellow yellow blue yellow yellow
+yellow blue None blue yellow
+blue None red None blue
+yellow blue None blue yellow
+yellow yellow blue yellow yellow
