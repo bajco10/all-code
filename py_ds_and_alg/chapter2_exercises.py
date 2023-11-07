@@ -1119,7 +1119,7 @@ for i in range(50):
 
 
 #-------------------P2-36---------------------
-"""import random
+import random
 
 
 
@@ -1251,7 +1251,7 @@ Game2 = RiverEcosystem (100, 10, 10)
 print ('Currently playing a game with 10 bears and 10 fish')
 for _ in range(40):
     print (Game2)
-    Game2.timestep()"""
+    Game2.timestep()
     
 # P-2.38 -> can be considered done
 """
