@@ -149,7 +149,7 @@ def vytlac_trojuholnik(t):
                                 -> vratim trojuholnik, ktory vyzera: [[1], [1, 1], [1, 2, 1]]
     vzdy sa ten novy element bude rovnat dvojici cisel 'nad nim' """
 
-# 6 LEPSIE RIESENIE
+# 7 LEPSIE RIESENIE
 def pascalov_trojuholnik(n):
     vysl = []
     for i in range(1, n+1): # vytvara riadky trojuholnika -> tento for-loop je inkluzivny
@@ -160,5 +160,162 @@ def pascalov_trojuholnik(n):
         vysl.append(riadok)
     return vysl
 
-print(pascalov_trojuholnik(7))
+# print(pascalov_trojuholnik(7))
 
+# 8
+def citaj(meno_suboru):
+    with open(f'{meno_suboru}', encoding="utf8") as subor:
+        res = []
+        for riadok in subor:
+            res.append(riadok.strip().split(" "))
+    return res
+
+# x = citaj("matice2023.txt")
+# vypis(x)
+
+# 9
+def zapis(x, meno_suboru):
+    with open(f"{meno_suboru}", "w", encoding="utf8") as subor:
+        for i in x:
+            print(" ".join(i), file=subor)
+# zapis(x, "matice2023zapis.txt")
+
+# 10
+# na vytvorenie potrebneho suboru
+'''import random
+pocet_r = random.randrange(2, 5)
+tab = []
+for i in range(random.randrange(3, 8)):
+    cur = []
+    for j in range(random.randrange(1, 5)):
+        cur.append(random.randrange(-1000, 1000))
+    tab.append(cur)
+print(tab)
+with open("matice2023cisla.txt", "w") as subor:
+    for i in tab:
+        print(" ".join(map(str, i)), file=subor)'''
+
+def citaj_cisla(meno_suboru):
+    res = []
+    with open(f"{meno_suboru}", encoding="utf8") as subor:
+        for riadok in subor:
+            res.append(list(map(int, riadok.strip().split(" "))))
+    return res
+
+# x = citaj_cisla("matice2023cisla.txt")
+# print(x)
+
+# kod z "prednasky" potrebny pre ulohu 11 a dalsie...
+"""
+import tkinter
+
+def vyrob(pocet_riadkov, pocet_stlpcov, hodnota=0):
+    '''vytvori tabulku na zaklade poctu riadkov a stlpcov'''
+    vysl = []
+    for i in range(pocet_riadkov):
+        vysl.append([hodnota] * pocet_stlpcov)
+    return vysl
+
+def ocisluj(tab):
+    '''pridavame ciselne hodnoty kazdemu elementu, po riadkoch'''
+    poc = 0
+    for riadok in tab:
+        for j in range(len(riadok)):
+            riadok[j] = poc
+            poc += 1
+
+def kresli_text(tab):
+    '''vykreslime tabulku
+        pouzitie enumerate aby sme dokazali upravovat x a y suradnice
+        podla indexu elementu v riadku (x-suradnica)
+         a indexu riadku v tabulke (y-suradnica)'''
+    d = 20
+    for r, riadok in enumerate(tab):
+        for s, prvok in enumerate(riadok):
+            canvas.create_text(s * d + 10, r * d + 10, text=prvok)
+
+def kresli(tab, d=20, farby=('white', 'black', 'red', 'blue')):
+    canvas.delete('all')
+    for r, riadok in enumerate(tab):
+        for s, prvok in enumerate(riadok):
+            x, y = s * d + 5, r * d + 5
+            farba = farby[prvok % len(farby)]
+            canvas.create_rectangle(x, y, x + d, y + d,
+                                    fill=farba, outline='light gray')
+    canvas.update()
+
+def zmen():
+    '''funkcia pre nase tlacitko zmen, obnovi tabulku
+    -> meni hodnoty '''
+    for i, riadok in enumerate(t):
+        for j in range(len(riadok)):
+            riadok[j] += i + 1
+    kresli(t)
+
+canvas = tkinter.Canvas()
+canvas.pack()
+
+tkinter.Button(text='Zmeň', command=zmen).pack() # nebrali sme este, primitivne :)
+t = vyrob(12, 12)
+ocisluj(t)
+# kresli_text(t)
+kresli(t)
+
+n = 11
+t = vyrob(n, n)
+for i in range(n):
+    for j in range(n):
+        if i == 0 or i == n - 1 or j == 0 or j == n - 1: # obvod obrazka
+            t[i][j] = 2
+    t[i][i] = t[i][n - 1 - i] = 3 # diagonaly
+kresli(t)"""
+
+# tkinter.mainloop()
+
+# 11 
+import tkinter
+canvas = tkinter.Canvas()
+canvas.pack()
+def kresli(tab, d=20, farby=("black", "yellow", "orange", "blue", "red", "white")):
+    for r, riadok in enumerate(tab):
+        for s, prvok in enumerate(riadok):
+            x, y = s * d + 5, r * d + 5
+            if prvok != None:
+                farba = farby[prvok]
+                canvas.create_rectangle(x, y, x+d, y+d, fill=farba, outline="light gray")
+
+panak = [
+    [0, 0, 0, None, None],
+    [1, 1, None, None, None],
+    [1, 1, 1, None, 2],
+    [3, None, None, None, 2],
+    [3, 3, 2, 2, None],
+    [4, 4, None, None, None],
+    [4, 4, 4, None, None],
+    [4, None, 4, 4, None],
+    [2, None, None, 2, None],
+    [2, 2, None, 2, 2]
+]
+# uprava panaka, nech je to symetricke pole -> doplnenie None ručne
+print(max(len(i) for i in panak))
+# kresli(panak)
+
+# 12
+def zrkadlo(tab):
+    res = []
+    for i in tab:
+        cur = []
+        for j in i:
+            cur.append(j)
+        cur.append(None)
+        for k in i[::-1]:
+            cur.append(k)
+        res.append(cur)
+    return res
+
+# print(zrkadlo(panak))
+# kresli(zrkadlo(panak))
+# kresli(zrkadlo(zrkadlo(panak)), 15)
+# 13
+
+canvas.mainloop()
