@@ -297,7 +297,7 @@ panak = [
     [2, 2, None, 2, 2]
 ]
 # uprava panaka, nech je to symetricke pole -> doplnenie None ručne
-print(max(len(i) for i in panak))
+# print(max(len(i) for i in panak))
 # kresli(panak)
 
 # 12
@@ -316,6 +316,67 @@ def zrkadlo(tab):
 # print(zrkadlo(panak))
 # kresli(zrkadlo(panak))
 # kresli(zrkadlo(zrkadlo(panak)), 15)
+
 # 13
+# - lepsie riesenie, pridavam do posledne pridaneho listu cez extend
+"""def zvacsi(obr):
+    res = []
+    for i in obr:
+        res.append([])
+        for j in i:
+            res[-1].extend((j, j))
+        res.append(res[-1])
+    return res"""
+# - jednoduchsie riesenie
+def zvacsi(obr):
+    res = []
+    for i in obr:
+        cur = []
+        for j in i:
+            cur.append(j)
+            cur.append(j)
+        res.append(cur)
+        res.append(cur)
+    return res
+# kresli(zvacsi(panak), 10)
+# kresli(zvacsi(zvacsi(panak)), 5)
+
+# 14
+def nahrad(obr, post):
+    novy = []
+    for riadok in obr:
+        riadok = list(riadok)
+        for i, prvok in enumerate(riadok):
+            for x, y in post: # tuple!
+                if prvok ==x:
+                    riadok[i] = y
+                    break
+        novy.append(riadok)
+    return novy
+
+# kresli(nahrad(panak, ((3, 4), (4, 0), (None, 5))))
+# 15 - treba ratat cez pytagorovu vetu!
+t = []
+for i in range(50):
+    t.append([5]*50)
+# print(t)
+def kruh(tab, r, r1, s1, hodnota):
+    """
+    r -> polomer kruhu
+    r1 -> riadok stredu
+    s1 -> stlpec stredu
+    hodnota -> index na vybratie farby z listu
+    """
+    n = len(tab)
+    for i in range(n):
+        for j in range(n):
+            vzd = ((i-r1)**2 + (j-s1)**2) ** 0.5
+            # obrazkove vysvetlenie
+            if vzd <= r:
+                tab[i][j] = hodnota
+    return tab
+# kruh(t, 17, 20, 30, 4)
+# kresli(t, 5)
+# 16
 
 canvas.mainloop()
