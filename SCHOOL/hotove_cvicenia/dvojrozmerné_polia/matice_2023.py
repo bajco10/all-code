@@ -375,8 +375,36 @@ def kruh(tab, r, r1, s1, hodnota):
             if vzd <= r:
                 tab[i][j] = hodnota
     return tab
-# kruh(t, 17, 20, 30, 4)
-# kresli(t, 5)
-# 16
+'''kruh(t, 17, 20, 30, 4)
+kruh(t, 13, 40, 25, 3)
+kruh(t, 10, 15, 15, 0)
+kruh(t, 8, 15, 15, 5)
+kresli(t, 5)'''
 
-canvas.mainloop()
+# canvas.mainloop()
+
+# 16
+def do_radu(tab):
+    res = []
+    for i in tab:
+        res.extend(i)
+    return res
+
+'''tab1 = [[1], [2, 3, 4], [5, 6], [7]]
+zoz = do_radu(tab1)
+print(zoz)
+print(do_radu([["prvy"], [], ["druhy", "treti"]]))'''
+
+# 17
+def do_dvojrozmernej(postupnost, sirka):
+    res = []
+    zoz = list(postupnost)
+    while zoz:
+        res.append(zoz[:sirka])
+        zoz = zoz[sirka:]
+    return res
+
+t1 = do_dvojrozmernej(range(10), 3)
+vypis(t1)
+
+vypis(do_dvojrozmernej('programovanie', 2))
