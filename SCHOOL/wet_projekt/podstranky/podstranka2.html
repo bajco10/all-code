@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../styles.css"> <!-- Link to your custom styles -->
+  <title>Galéria</title>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <!-- Wrap the GPU icon in an <a> tag to make it a link -->
+    <a class="navbar-brand" href="../index.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-gpu-card" viewBox="0 0 16 16">
+        <path d="M4 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m7.5-1.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3"/>
+        <path d="M0 1.5A.5.5 0 0 1 .5 1h1a.5.5 0 0 1 .5.5V4h13.5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5H2v2.5a.5.5 0 0 1-1 0V2H.5a.5.5 0 0 1-.5-.5m5.5 4a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M9 8a2.5 2.5 0 1 0 5 0 2.5 2.5 0 0 0-5 0"/>
+        <path d="M3 12.5h3.5v1a.5.5 0 0 1-.5.5H3.5a.5.5 0 0 1-.5-.5zm4 1v-1h4v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5"/>
+      </svg>
+    </a>
+
+    <!-- Rest of the navbar remains unchanged -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="podstranka1.html">Komponenty</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="podstranka2.html">Galéria</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content Container -->
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <!-- Gallery -->
+      <div class="gallery">
+        <!-- Placeholder images with names -->
+        <div class="gallery-item">
+          <img src="../images/4080.jpg" alt="Image 1">
+          <p>RTX 4080 - 16GB GDDR6X (22400MHz), Boost 2610MHz</p>
+        </div>
+        <div class="gallery-item">
+          <img src="../images/4070.jpg" alt="Image 2">
+          <p>RTX 4070 - 12GB GDDR6X (21000MHz), Boost 2490MHz</p>
+        </div>
+        <div class="gallery-item">
+          <img src="../images/4060.jpg" alt="Image 3">
+          <p>RTX 4060 - 8GB GDDR6X (17000MHz), Boost 2505MHz</p>
+        </div>
+        <div class="gallery-item">
+          <img src="../images/3090.jpg" alt="Image 4">
+          <p>RTX 3090 - 24GB GDDR6X (19500MHz), Boost 1800MHz</p>
+        </div>
+        <div class="gallery-item">
+          <img src="../images/3080.jpg" alt="Image 5">
+          <p>RTX 3080 - 10GB GDDR6X (19000MHz), Boost 1800MHz</p>
+        </div>
+        <div class="gallery-item">
+          <img src="../images/3070.jpg" alt="Image 6">
+          <p>RTX 3070 - 8GB GDDR6X (19000MHz), Boost 1730MHz</p>
+        </div>
+        <div class="gallery-item">
+          <img src="../images/3060.jpg" alt="Image 7">
+          <p>RTX 3060 - 12GB GDDR6 (15000MHz), Boost 1777MHz</p>
+        </div>
+        <div class="gallery-item">
+          <img src="../images/2080.jpg" alt="Image 8">
+          <p>RTX 2080 - 11GB GDDR6 (14000MHz), Boost 1815MHz</p>
+        </div>
+        <div class="gallery-item">
+          <img src="../images/2070.jpg" alt="Image 9">
+          <p>RTX 2070 - 8GB GDDR6 (14000MHz), Boost 1770MHz</p>
+        </div>
+        <div class="gallery-item">
+          <img src="../images/2060.jpg" alt="Image 10">
+          <p>RTX 2060 - 6GB GDDR6 (14000MHz), Boost 1565MHz</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer with fixed-bottom class -->
+<footer class="bg-dark text-white text-center py-2">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p class="mb-0">Miro Jablko</p>
+      </div>
+      <div class="col footer-item">
+        <a href="https://www.google.com/maps/search/?api=1&query=Petöfiho%209246/11,%20821%2006%20Bratislava" target="_blank">
+          <p class="mb-0">Petöfiho 9246/11, 821 06 Bratislava</p>
+        </a>
+      </div>
+      <div class="col">
+        <p class="mb-0">+421 949 221 343</p>
+      </div>
+      <div class="col">
+        <p class="mb-0">jablkomiro8@gmail.com</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
