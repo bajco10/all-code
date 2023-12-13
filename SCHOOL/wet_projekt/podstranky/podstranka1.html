@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../styles.css"> <!-- Link to your custom styles -->
+  <title>Komponenty</title>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <!-- Wrap the GPU icon in an <a> tag to make it a link -->
+    <a class="navbar-brand" href="../index.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-gpu-card" viewBox="0 0 16 16">
+        <path d="M4 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m7.5-1.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3"/>
+        <path d="M0 1.5A.5.5 0 0 1 .5 1h1a.5.5 0 0 1 .5.5V4h13.5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5H2v2.5a.5.5 0 0 1-1 0V2H.5a.5.5 0 0 1-.5-.5m5.5 4a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M9 8a2.5 2.5 0 1 0 5 0 2.5 2.5 0 0 0-5 0"/>
+        <path d="M3 12.5h3.5v1a.5.5 0 0 1-.5.5H3.5a.5.5 0 0 1-.5-.5zm4 1v-1h4v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5"/>
+      </svg>
+    </a>
+
+    <!-- Rest of the navbar remains unchanged -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="podstranka1.html">Komponenty</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="podstranka2.html">Galéria</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content Container -->
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-lg-3">
+      <!-- Tabs on the left side -->
+      <div class="nav flex-column nav-pills" id="componentTabs" role="tablist" aria-orientation="vertical">
+        <a class="nav-link active" id="component1-tab" data-bs-toggle="pill" href="#component1" role="tab" aria-controls="component1" aria-selected="true"><strong>Komponenty</strong></a>
+        <a class="nav-link" id="component2-tab" data-bs-toggle="pill" href="#component2" role="tab" aria-controls="component2" aria-selected="false"><strong>Výstupné konektory</strong></a>
+        <a class="nav-link" id="component3-tab" data-bs-toggle="pill" href="#component3" role="tab" aria-controls="component3" aria-selected="false"><strong>Zbernice</strong></a>
+        <!-- Add more tabs as needed -->
+      </div>
+    </div>
+    <div class="col-lg-9">
+      <!-- Tab content -->
+      <div class="tab-content" id="componentContent">
+        <div class="tab-pane fade show active" id="component1" role="tabpanel" aria-labelledby="component1-tab">
+          <!-- Description of Component 1 -->
+          <img class="grafika-image" src="../images/graficka.jpg">
+          <ul>
+            <li>
+              <strong>Grafický procesor - </strong>GPU (Grafic Processing Unit) je mikroprocesor pre 2D a 3D renderovanie. Hlavným parametrom GPU je frekvencia jadra – rádovo v GHz. 
+              VPU (Vizual Processing Unit) nové označenie pre grafický procesor. Výkonný grafický procesor odbremeňuje CPU, 
+              informácie ktoré nemusí spracovať CPU spracováva grafický procesor čím odbremeňuje aj operačnú pamäť. Súčasné grafické karty  
+              majú okrem zobrazovania dát v monitore za úlohu aj prehrávať video (plynule v HD), vytvárať realistické 3D scény, pracovať so zložitými matematickými rovnicami.
+            </li>
+            <li>
+              <strong>Grafická pamäť - </strong>Je to špeciálna pamäť umiestnená na grafickej karte, označujeme ju ako VRAM (VideoRAM) GDDR.
+            </li>
+            <li>
+              <strong>Video BIOS - </strong> firmware – základný program ovládajúci operácie na grafickej karte, 
+              vykonáva inštrukcie dávané grafickému procesoru od CPU. Má na starosti správu pamäti, časovanie napätia, atď…
+            </li>
+            <li>
+              <strong>RAMDAC - </strong>(Random Access Memory Digital to Analog Convector) – prevádza digitálny signál z grafického procesora do analógovej formy pre monitor.
+            </li>
+            <li>
+              <strong>Pasívne chladenie - </strong> Zabezpečujú ho hliníkové chladiče upevnené na samostatnej grafickej karte.
+            </li>
+            <li>
+              <strong>Aktívne chladenie - </strong> Je zabezpečované ventilátormi pripojenými k hliníkovým chladičom.
+            </li>
+            <li>
+              <strong>Vstupné rozhranie.</strong>
+            </li>
+            <li>
+              <strong>Výstupné konektory.</strong>
+            </li>
+          </ul>
+          <!-- Connector Table -->
+          
+        </div>
+        <div class="tab-pane fade" id="component2" role="tabpanel" aria-labelledby="component2-tab">
+          <!-- Description of Component 2 -->
+          <table class="table">
+            <tbody>
+              <tr>
+                <td><strong>SVGA</strong></td>
+                <td><img src="../images/vga.jpg" width="auto" height="40"></td>
+              </tr>
+              <tr>
+                <td><strong>DVI</strong></td>
+                <td><img src="../images/dvi.jpg" width="auto" height="40"></td>
+              </tr>
+              <tr>
+                <td><strong>S-video</strong></td>
+                <td><img src="../images/svideo.jpg" width="auto" height="40"></td>
+              </tr>
+              <tr>
+                <td><strong>Display port</strong></td>
+                <td><img src="../images/dp.jpg" width="auto" height="40"></td>
+              </tr>
+              <tr>
+                <td><strong>HDMI</strong></td>
+                <td><img src="../images/hdmi.jpg" width="auto" height="40"></td>
+              </tr>
+              <tr>
+                <td><strong>USB-C</strong></td>
+                <td><img src="../images/usbc.jpg" width="auto" height="40"></td>
+              </tr>
+              <!-- Add more rows as needed -->
+            </tbody>
+          </table>
+          <ul>
+            <li>
+              <strong>SVGA - </strong> konektor určený pre analógové VGA. Problém pri jeho používaní je rušenie, deformácia obrazu, deformácia bodu.
+            </li>
+            <li>
+              <strong>DVI - </strong> digitálny výstup určený pre novšie LCD a plazmové display-e, využíva natívne rozlíšenie to znamená, že každý bod je jednoznačne určený.
+            </li>
+            <li>
+              <strong>S-Video - </strong> modulovaný video signál pre televíziu a video.
+            </li>
+            <li>
+              <strong>Display port - </strong> digitálny výstup aj so zvukom.
+            </li>
+            <li>
+              <strong>HDMI - </strong> výstup s vysokým rozlíšením aj so zvukom.
+            </li>
+            <li>
+              <strong>USB-C - </strong> univerzálny kábel pre napájanie, prenos zvuku a videa.
+            </li>
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="component3" role="tabpanel" aria-lablledby="component3-tab">
+          <p><strong>Zbernice pre grafické karty:</strong></p>
+          <ul>
+            <li>
+              <strong>ISA - </strong>16 bitová architektúra, 8 MHz, používaná od 1981, dominantná technológia v 80-tych rokoch
+            </li>
+            <li>
+              <strong>MCA - </strong>32 bit, 10 MHz. 1987, nekompatibilná s ISA
+            </li>
+            <li>
+              <strong>EISA - </strong>32 bit, 8.33 MHz. 1988, kompatibilná s predchádzajúcimi typmi
+            </li>
+            <li>
+              <strong>PCI - </strong>32 bit, 33 MHz. nahradila všetky zbernice od 1993. Zaviedla rýchle dynamické prepojenie medzi zariadeniami na zbernici bez nutnosti nastavovania. Plná podpora Plug and Play
+            </li>
+            <li>
+              <strong>PCI-X - </strong>zvýšila PCI na 64 bit a 133 MHz.
+            </li>
+            <li>
+              <strong>AGP - </strong>Vyčlenená len pre grafiku, 32 bit, 66 MHz.
+            </li>
+            <li>
+              <strong>PCI-Express - 2004, 2006 PCIe 2.0, 2010 PCIe 3.x, 2011 PCIe 4.x, 2020 PCIe 5.x </strong>
+            </li>
+          </ul>
+        </div>
+        <!-- Add more tab content as needed -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Footer with fixed-bottom class -->
+<footer class="bg-dark text-white text-center py-2 fixed-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p class="mb-0">Miro Jablko</p>
+      </div>
+      <div class="col footer-item">
+        <a href="https://www.google.com/maps/search/?api=1&query=Petöfiho%209246/11,%20821%2006%20Bratislava" target="_blank">
+          <p class="mb-0">Petöfiho 9246/11, 821 06 Bratislava</p>
+        </a>
+      </div>
+      <div class="col">
+        <p class="mb-0">+421 949 221 343</p>
+      </div>
+      <div class="col">
+        <p class="mb-0">jablkomiro8@gmail.com</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>

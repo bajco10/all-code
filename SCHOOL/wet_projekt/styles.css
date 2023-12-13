@@ -1,0 +1,98 @@
+/* styles.css */
+/* styles.css */
+
+a {
+  color: #eaeaea;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  background-color: #eaeaea;
+}
+
+h1 {
+  color: #007bff; /* Bootstrap primary color */
+}
+
+p {
+  font-size: 18px;
+}
+
+
+/* Header styles */
+header {
+  height: 60vh; /* Adjust the height as needed */
+  background-image: url('images/header_bg.jpg'); /* Adjust the path to your image */
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 {
+  color: #fff;
+  padding-top: 5rem;
+  font-size: 3rem;
+}
+
+/* Footer styles */
+footer {
+  background-color: #343a40; /* Match the navbar color */
+}
+
+footer p {
+  color: rgba(255, 255, 255, 0.55); /* Set the text color for the footer */
+  font-size: 14px; /* Adjust the font size as needed */
+}
+
+.nav-pills .nav-link {
+  background-color: #343a40; /* Set your desired tab background color */
+  color: #eaeaea; /* Set your desired tab text color */
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+  background-color: #eaeaea; /* Set your desired active tab background color */
+  color: #343a40; /* Set your desired active tab text color */
+}
+
+li{
+  padding-bottom: 3px;
+}
+
+/* Styles for the gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* Style for each gallery item */
+.gallery-item {
+  text-align: center;
+}
+
+/* Style for each image */
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Style for the graphics card image */
+.grafika-image {
+  max-width: 100%; /* Ensures the image does not exceed the width of its container */
+  height: auto; /* Maintains the aspect ratio of the image */
+  display: block; /* Removes any extra space below the image */
+  margin: 0 auto; /* Centers the image within its container */
+}
+
+
+
+
+
