@@ -146,16 +146,17 @@ def dvojice(meno_suboru):
                     tabulka[dvojica] += 1
                 else:
                     tabulka[dvojica] = 1
+
     m = 0 # strasne divny sposob vypisovania ale funguje
-    for kluc, hodnota in sorted(tabulka.items(), key=lambda x:x[1], reverse=True):
-            if m > 10:
-                break
+    for kluc, hodnota in sorted(tabulka.items(), key=lambda x:x[1], reverse=True)[:10]:
+            """if m > 10:
+                break"""
             print(kluc, hodnota)
             m+=1
             
 
-# dvojice("twain.txt")
-# print()
-# dvojice("dobs.txt")
+"""dvojice("twain.txt")
+print()
+dvojice("dobs.txt")"""
 
-# 17? zistit co a ako
+# 17
