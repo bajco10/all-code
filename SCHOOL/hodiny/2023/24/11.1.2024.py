@@ -87,7 +87,7 @@ def klik(e):
 c.bind("<1>", klik)
 c.mainloop()"""
 # 4
-import tkinter
+"""import tkinter
 import random
 c = tkinter.Canvas(width=600, height=300, bg="white")
 c.pack()
@@ -109,5 +109,49 @@ def klik(e):
             stvorce[index] = 0
         farby = ["white", "blue", "red"]
         c.itemconfig(index+1, fill=farby[stvorce[index]])
+c.bind("<1>", klik)
+c.mainloop()"""
+
+# 5
+import tkinter
+import random
+c = tkinter.Canvas(width=600, height=200, bg="white")
+c.pack()
+n = 8
+zoznam = []
+for i in range(n):
+    zoznam.append(i)
+random.shuffle(zoznam)
+
+x, y, r = 100, 100, 50
+for i in zoznam:
+    c.create_rectangle(x, y, x+r, y+r)
+    if i != 0:
+        c.create_text(x+r/2, y+r/2, text=i)
+    x+=50
+# print(zoznam)
+def klik(e):
+    global r
+    global zoznam
+    x, y=100, 100
+    index = (e.x-100)//r
+    if index >= 0 and index<len(zoznam) and y+r>e.y>y:
+        prazdne = zoznam.index(0)
+        zoznam[prazdne] = zoznam[index]
+        zoznam[index] = 0
+        # print(zoznam)
+        c.update()
+        c.delete("all")
+        for i in zoznam:
+            c.create_rectangle(x, y, x+r, y+r)
+            if i != 0:
+                c.create_text(x+r/2, y+r/2, text=i)
+            x+=50
+        c.update()
+        dobry_zoznam = sorted(zoznam)
+        dobry_zoznam.remove(0)
+        if zoznam[:-1] == dobry_zoznam:
+            print("Hura!")
+
 c.bind("<1>", klik)
 c.mainloop()
