@@ -26,3 +26,5 @@ for i in range(len(m)):
 print(vedla)
 print(hlavna)
 # print(np.diag(m, -1))
+
+

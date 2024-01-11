@@ -1,0 +1,21 @@
+I apologize for any confusion in my previous responses. Let's break down the formula new_matrix[j][M-i-1] = original_matrix[i][j] and explain why it's [M-i-1] for the y-coordinate after a 90-degree clockwise rotation.
+
+In a 2D matrix, the indices i and j represent the row and column indices, respectively.
+
+i: Original row index (corresponding to the y-coordinate).
+j: Original column index (corresponding to the x-coordinate).
+Now, let's consider the rotated matrix. After a 90-degree clockwise rotation:
+
+The rows of the original matrix become the columns of the rotated matrix.
+The columns of the original matrix become the rows of the rotated matrix.
+So, in the formula new_matrix[j][M-i-1] = original_matrix[i][j]:
+
+j: Represents the new column index (corresponding to the new x-coordinate).
+M-i-1: Represents the new row index (corresponding to the new y-coordinate).
+The M-i-1 expression is used to reflect the change in the row indices during the rotation. Here's why:
+
+M: Represents the total number of rows in the original matrix.
+i: Represents the original row index (y-coordinate).
+In a 90-degree clockwise rotation, the new row index (new y-coordinate) is obtained by subtracting the original row index from the total number of rows and subtracting 1. This is because indices are zero-based, and the last row in the original matrix becomes the first row in the rotated matrix.
+
+So, in summary, M-i-1 is used to calculate the new row index (new y-coordinate) after the 90-degree clockwise rotation. I hope this clarifies the reasoning behind that expression.
