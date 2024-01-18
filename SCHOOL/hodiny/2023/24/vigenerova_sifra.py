@@ -51,7 +51,7 @@ def desifruj(sifrovane, heslo):
                 if j[idx] == i:
                     textik += j[0]
         else:
-            textik += i
+            textik += i 
     return textik
 
 print(desifruj("UIYF OT GLFVTASÝ JPŇ.", "heslo"))
