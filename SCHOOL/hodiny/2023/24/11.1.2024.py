@@ -117,7 +117,7 @@ import tkinter
 import random
 c = tkinter.Canvas(width=600, height=200, bg="white")
 c.pack()
-n = 8
+n = random.randrange(5, 10)
 zoznam = []
 for i in range(n):
     zoznam.append(i)
@@ -125,7 +125,7 @@ random.shuffle(zoznam)
 
 x, y, r = 100, 100, 50
 for i in zoznam:
-    c.create_rectangle(x, y, x+r, y+r)
+    c.create_rectangle(x, y, x+r, y+r, fill="yellow")
     if i != 0:
         c.create_text(x+r/2, y+r/2, text=i)
     x+=50
@@ -143,7 +143,7 @@ def klik(e):
         c.update()
         c.delete("all")
         for i in zoznam:
-            c.create_rectangle(x, y, x+r, y+r)
+            c.create_rectangle(x, y, x+r, y+r, fill="yellow")
             if i != 0:
                 c.create_text(x+r/2, y+r/2, text=i)
             x+=50
@@ -151,7 +151,7 @@ def klik(e):
         dobry_zoznam = sorted(zoznam)
         dobry_zoznam.remove(0)
         if zoznam[:-1] == dobry_zoznam:
-            print("Hura!")
+            c.create_text(270, 50, text="Zvládli ste to!")
 
 c.bind("<1>", klik)
 c.mainloop()
