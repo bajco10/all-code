@@ -1,0 +1,27 @@
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+A N X P U O S E R B Z J M C V F L K Y T I Q W D H G A
+B X P U O S E R B Z J M C V F L K Y T I Q W D H G A N
+C P U O S E R B Z J M C V F L K Y T I Q W D H G A N X
+D U O S E R B Z J M C V F L K Y T I Q W D H G A N X P
+E O S E R B Z J M C V F L K Y T I Q W D H G A N X P U
+F S E R B Z J M C V F L K Y T I Q W D H G A N X P U O
+G E R B Z J M C V F L K Y T I Q W D H G A N X P U O S
+H R B Z J M C V F L K Y T I Q W D H G A N X P U O S E
+I B Z J M C V F L K Y T I Q W D H G A N X P U O S E R
+J Z J M C V F L K Y T I Q W D H G A N X P U O S E R B
+K J M C V F L K Y T I Q W D H G A N X P U O S E R B Z
+L M C V F L K Y T I Q W D H G A N X P U O S E R B Z J
+M C V F L K Y T I Q W D H G A N X P U O S E R B Z J M
+N V F L K Y T I Q W D H G A N X P U O S E R B Z J M C
+O F L K Y T I Q W D H G A N X P U O S E R B Z J M C V
+P L K Y T I Q W D H G A N X P U O S E R B Z J M C V F
+Q K Y T I Q W D H G A N X P U O S E R B Z J M C V F L
+R Y T I Q W D H G A N X P U O S E R B Z J M C V F L K
+S T I Q W D H G A N X P U O S E R B Z J M C V F L K Y
+T I Q W D H G A N X P U O S E R B Z J M C V F L K Y T
+U Q W D H G A N X P U O S E R B Z J M C V F L K Y T I
+V W D H G A N X P U O S E R B Z J M C V F L K Y T I Q
+W D H G A N X P U O S E R B Z J M C V F L K Y T I Q W
+X H G A N X P U O S E R B Z J M C V F L K Y T I Q W D
+Y G A N X P U O S E R B Z J M C V F L K Y T I Q W D H
+Z A N X P U O S E R B Z J M C V F L K Y T I Q W D H G
