@@ -11,7 +11,7 @@
 """
 import json
 
-subor = json.load(open("faktury_BB.json"))
+subor = json.load(open("faktury_BB.json", encoding="utf-8"))
 firmy = {}
 for i in range(len(subor)):
     meno = subor[i]["Dodávateľ"]
@@ -38,21 +38,28 @@ for i in range(len(subor)):
                                    "sumy":[cena]}
     else:
         # print("vsetko je, pridavam")
-        """firmy[ico] = {
-            "meno":meno,
-            "data":{
-                rok["cifry"].append(cifra),
-                rok["sumy"].append(cena)
-            }
-        }"""
         firmy[ico]["data"][rok]["cifry"].append(cifra)
         firmy[ico]["data"][rok]["sumy"].append(cena)
 
-"""for ico, x in firmy.items():
-    if ico == "44553625":
-        print(ico, x)"""
-
 fakturanti = {}
+def vyhod_trvale(rok=None):
+    global fakturanti
+    
+    if rok:
+        ico_von = []
+        for ico, udaje in fakturanti.items():
+            platby = udaje["sumy"]
+            for platba in platby:
+                if platby.count(platba) >= len(platby)//2:
+                    ico_von.append(ico)
+                    print("vymazana firma: " + ico)
+                    break
+        for icko in ico_von:
+            del fakturanti[icko]
+
+def rataj_benf(fakturanti):
+    benf = [0.301, 0.176, 0.123, 0.097, 0.079, 0.067, 0.058, 0.051, 0.046]
+
 def vyfiltruj(rok):
     global firmy
     global fakturanti
@@ -62,3 +69,4 @@ def vyfiltruj(rok):
 
 for i in fakturanti.values():
     print(i)
+    
