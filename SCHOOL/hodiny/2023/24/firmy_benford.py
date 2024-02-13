@@ -62,4 +62,3 @@ def vyfiltruj(rok):
 
 for i in fakturanti.values():
     print(i)
-    
