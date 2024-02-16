@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="sk_SK">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>BMI</title>
+    <style>
+        .skry{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="form-group" style="margin:10px">
+        <label>Zadajte vysku: </label>
+        <input type="number" id="vyska" name="vyska" value="" />
+    </div>
+    <div class="form-group" style="margin:10px">
+        <label>Zadajte vahu: </label>
+        <input type="number" id="vaha" name="vaha" value="" />
+    </div>
+    <div class="skry">
+        <p id="bmi"></p>
+        <p id="text"></p>
+    </div>
+    
+    <button id="b1">Vyrataj</button>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        $("#b1").click(function(){
+            var vyska = $("#vyska").val();
+            var vaha = $("#vaha").val();
+            var bmi = ((vaha)/(vyska**2));
+            //alert(bmi);
+            /*console.log(bmi);
+            $("#bmi").text(bmi);*/
+            $("div.skry").show();
+            $("#bmi").text(bmi.toFixed(2));
+            $("#text").addClass("text-danger");
+            if (bmi<18.5) {
+                $("#text").html("<b>Máte podvýživu</b>");
+            } else if (bmi<25) {
+                $("#text").html("<b>Vaša váha je v norme</b>");
+                $("#text").addClass("text-success").removeClass("text-danger");
+            } else {
+                $("#text").html("<b>Treba prestať jesť :) </b>");
+            }
+        });
+    });
+</script>
+</html>
+
+

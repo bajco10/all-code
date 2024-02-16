@@ -40,7 +40,7 @@ canvas.bind("<Button-1>", klik)
 canvas.bind("<B1-Motion>", tahanie)
 canvas.bind("<ButtonRelease>", zmaz)
 canvas.mainloop()"""
-# 8
+# 8, # 9
 import tkinter
 c = tkinter.Canvas(width = 800, height=800)
 c.pack()
@@ -48,22 +48,25 @@ x1, y1 = 100, 200
 #  x2, y2 = 150, 300
 dx, dy = None, None
 c.create_rectangle(x1, y1, x1+50, y1+50, fill="red", tag="stv")
-c.create_rectangle(x1+200, y1+100, x1+350, y1+200, fill="blue", tag="stv")
+c.create_rectangle(x1+200, y1+100, x1+350, y1+200, fill="blue", tag="obd")
 def klik(e):
-    global dx, dy, klik
-    sur = c.coords("stv")
-    klik = False
-    if sur[0] <= e.x <= sur[2] and sur[1] <= e.y <= sur[3]:
-        dx, dy = e.x-sur[0], e.y-sur[1]
-        klik = True
+    global dx, dy, klik, aky
+    dx, dy = None, None
+    for prvok in "stv","obd":
+        sur = c.coords(prvok)
+    # klik = False
+        if sur[0] <= e.x <= sur[2] and sur[1] <= e.y <= sur[3]:
+            dx, dy = e.x-sur[0], e.y-sur[1]
+            aky = prvok
+            c.lift(aky)
+        # klik = True
 
 def tahanie(e):
-    global klik
-    sur = c.coords("stv")
-    if klik:
-        # x, y = sur[0]+abs(sur[0]-e.x), sur[1]+abs(sur[1]-e.y)
-        # c.coords("stv", x, y, x+50, y+50)
-        c.coords("stv", e.x-dx, e.y-dy, e.x-dx+50, e.y-dy+50)
+    # global klik
+    sur = c.coords(aky)
+    if dx != None:
+        sirka, vyska = abs(sur[0]-sur[2]), abs(sur[1]-sur[3])
+        c.coords(aky, e.x-dx, e.y-dy, e.x-dx+sirka, e.y-dy+vyska)
 
 
 c.bind("<Button-1>", klik)

@@ -63,27 +63,10 @@ def rataj_benf(fakturanti):
 def vyfiltruj(rok):
     global firmy
     global fakturanti
-    if rok!="all":
-        for ico, udaje in firmy.items():
-            if int(rok) in firmy[ico]["data"]:
-                fakturanti[ico] = firmy[ico]["data"][int(rok)]
-    # print(fakturanti)
-    elif rok=="all":
-        for ico, udaje in firmy.items():
-            fakturanti[ico] = firmy[ico]["data"]
-    else:
-        print("Neplatný vstup")
-    if rok=="all":
-        vyhod_trvale()
-    else:
-        vyhod_trvale(rok)
+    for ico, udaje in firmy.items():
+        if str(rok) in firmy[ico]["data"]:
+            fakturanti[ico] = udaje
 
-vyfiltruj(2013)
-
-# print(firmy["44889780"])
-print(firmy["36634654"])  
-# vypisat top 10 spolocnosti, ktore sa vymykaju Benfordovho zakonu
-# -> pomery maju velku odchylku od grafu
-# ak je pocet vyskytu cislice dlhsi ako zoznam(cislic tejto firmy) treba firmu vylucit
-# => nieco ako stale prikazy -> skresluje to benf. krivku
-benf = [0.301, 0.176, 0.123, 0.097, 0.079, 0.067, 0.058, 0.051, 0.046]
+for i in fakturanti.values():
+    print(i)
+    
