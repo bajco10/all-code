@@ -2,7 +2,7 @@
 # postupne striadnie hráča 1 a 2
 # hrac vyhrava ak ma suvisle 4 gulicky svojej farby: 1. verikalne 2. horizontalne 3. diagonalne
 # spravit 2_rozmerné pole, keď hráč klikne na stlpec, zistiť ktory "najnizsi" riadok je prazdny
-# na tom indexe a tam dat jeho kruh
+# na tom indexe a tam dat jeho kruhore
 
 import tkinter
 c = tkinter.Canvas(width=600, height=550, bg="light grey")
