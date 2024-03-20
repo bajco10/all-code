@@ -6,6 +6,30 @@
 # z 2 -> 16, cez 10?
 # z 16 -> 2, cez 10?
 
+# grafika
+import tkinter
+c = tkinter.Canvas(width=800, height=600, bg="white")
+c.pack()
+
+# pomocné funkcie
+def kruhove_tlacitko(x, y, tag, text=""):
+    c.create_oval(x-30, y-30, x+30, y+30, fill="white", tags=tag)
+    c.create_text(x, y, text=text, font="Arial 19")
+
+
+# 3 tlačítka vľavo -> 2, 10, 16
+kruhove_tlacitko(10 + 30, 70, "2_z", "2")
+kruhove_tlacitko(10 + 30 + 10 + 60, 70, "10_z", "10")
+kruhove_tlacitko(10 + 30 + 10 + 60 + 10 + 60, 70, "16_z", "16")
+# 3 tlačítka vpravo -> 2, 10, 16
+kruhove_tlacitko(800 - 10 - 30, 70, "16_do", "16")
+kruhove_tlacitko(800-10-30-10-60, 70, "10_do", "10")
+kruhove_tlacitko(800-10-30-10-60-10-60, 70, "2_do", "2")
+# stvorec pre input -> pridať tag atď
+c.create_rectangle(400-150, 70-25, 400+150, 70+25)
+# stvorec pre riesenie => statické, netreba tag
+c.create_rectangle(20, 130, 780, 580)
+# funkcie kalkulačky
 def dec_to_bin(cislo):
     bin_cislo = ""
     while cislo != 0:
@@ -115,7 +139,11 @@ def hexa_to_bin(cislo):
     bin_cislo = ""
     sustava = "0123456789ABCDEF"
     stvorcislia = []
+    """
     for i in cislo:
-        stvorcislia.append(f"{i:02b}")
+        stvorcislia.append(f"{int(i):02b}")
     print(stvorcislia)
+    """
 hexa_to_bin("FF")
+
+tkinter.mainloop()
